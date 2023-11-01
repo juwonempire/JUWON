@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Quiz App</title>
+</head>
+<body>
+ <section class="analog-container">
+  <div class="analog">
+    <div class="hours">
+      <div class="twelve">12</div>
+      <div class="three">3</div>
+      <div class="six">6</div>
+      <div class="nine">9</div>
+    </div>
+    <div class="arrows">
+      <div id="seconds"></div>
+      <div id="minutes"></div>
+      <div id="hours"></div>
+    </div>
+    <p class="rolex">Rolex <i class="fa fa-star"></i></p>
+  </div>
+ </section>
+
+ <script>
+  const hourEl = document.getElementById("hours");
+  const minutesEl = document.getElementById("minutes");
+  const secondsEl = document.getElementById("seconds");
+  let zero = 0;
+  function undateTime(){
+    setInterval(undateTime, 1000)
+    const time = new Date();
+    const hours = time.getHours();
+    const minutes = time.getMinutes();
+    const seconds = time.getSeconds();
+    const hourDeg = (hours / 60) * 360;
+    hourEl.style.transform = `rotate(${hourDeg}deg)`
+    const minuteDeg = (minutes / 60) * 360;
+    minutesEl.style.transform = `rotate(${minuteDeg}deg)`
+    const secondDeg = (seconds / 60) * 360;
+    secondsEl.style.transform = `rotate(${secondDeg}deg)`
+  }
+  undateTime()
+ </script>
+</body>
+</html>

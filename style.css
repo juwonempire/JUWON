@@ -1,0 +1,103 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.analog-container{
+    width: 100%;
+    height: 100vh;
+    background-color:gray ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.analog{
+    width: 350px;
+    height: 350px;
+    background-color: lightgrey;
+    border-radius: 50%;
+    position: relative;
+    font-weight: bolder;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.analog .twelve{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 10px;
+}
+.analog .three{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 10px;
+}
+.analog .six{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 10px;
+}
+.analog .nine{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 10px;
+}
+
+.arrows::after{
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: black;
+    left: 50%;
+    transform: translate(-50%) translateY(-50%);
+    top: 50%;
+    border-radius: 50%;
+    z-index: 5;
+}
+
+.arrows div{
+    position: absolute;
+    left: 50%;
+    transform-origin:bottom center ;
+    width: 7px;
+    height: 120px;
+    background-color: grey;
+    bottom: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
+.arrows #hours{
+    transform: rotate(150deg);
+    border-radius: 50% 50% 0 0;
+    height: 90px;
+    background-color: black;
+}
+
+.arrows #minutes{
+    transform: rotate(190deg);
+    border-radius: 50% 50% 0 0;
+}
+
+.arrows #seconds{
+    border-radius: 50% 50% 0 0;
+    background-color: white;
+    width: 4px;
+    z-index: 4;
+}
+
+.rolex{
+    position: absolute;
+    bottom: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    color: green;
+    text-shadow: 0 0 1px black;
+}
